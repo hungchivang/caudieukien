@@ -6,24 +6,32 @@
 </head>
 <body>
 <form>
-  <img id="myimage" src="https://thuviendohoa.vn/upload/images/items/hinh-anh-trai-bong-da-lua-png-447.webp">
+  <img id="myimage" src="https://cf.shopee.vn/file/336295657902e8becdeb174f977e0e8b" style="width: 150px" height="150px">
   <p>Click button below to move the image to right</p>
   <input type="button" value="Move Right" onclick="moveright()">
   <input type="button" value="Move Left" onclick="moveleft()">
-
+    <input type="button" value="Move Up" onclick="moveup()">
+    <input type="button" value="Move Down" onclick="movedown()">
 </form>
 <script>
    let a= null;
     function init() {
     a = document.getElementById("myimage");
     a.style.position = "relative";
-    a.style.left = "50px";
+    a.style.left = "100px";
+    a.style.top ="300px";
     }
    function moveright() {
       a.style.left = parseInt(a.style.left) + 20 + "px";
     }
    function moveleft() {
      a.style.left = parseInt(a.style.left) + (-20) + "px";
+   }
+   function moveup() {
+       a.style.top = parseInt(a.style.top) + (-20) + "px";
+   }
+   function movedown() {
+       a.style.top = parseInt(a.style.top) + 20 + "px";
    }
     window.onload = init;
 </script>
