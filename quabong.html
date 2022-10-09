@@ -13,6 +13,7 @@
     <input type="button" value="Move Up" onclick="moveup()">
     <input type="button" value="Move Down" onclick="movedown()">
 </form>
+</body>
 <script>
    let a= null;
     function init() {
@@ -22,6 +23,7 @@
     a.style.top ="300px";
     }
    function moveright() {
+        debugger
       a.style.left = parseInt(a.style.left) + 20 + "px";
     }
    function moveleft() {
@@ -35,5 +37,4 @@
    }
     window.onload = init;
 </script>
-</body>
 </html>

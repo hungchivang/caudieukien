@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <td><input type="number" id = "a" placeholder="Nhap can nang (kg)"></td>
+        <td><input type="number" id = "b" placeholder="Nhap chieu cao (met)" ></td>
+            <td><button onclick="convert()">Convert</button><td>
+        </tr>
+        <tr>
+            <td>Body mass index-BMI :</td>
+            <td id="ketqua"></td>
+        </tr>
+        <tr id="interpretation"></tr>
+    </table>
+</body>
+<script>
+    function convert() {
+        debugger
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let ketqua = a / (b*b);
+        document.getElementById("ketqua").innerHTML= ketqua;
+        let abc = ''
+        if (ketqua < 18.5) {
+            abc = "underweight";
+        } else if (ketqua >= 18.5 && ketqua < 25.0) {
+            abc="Normal";
+        } else if (ketqua >= 25.0 && ketqua < 30.0) {
+            abc = "Overweight";
+        } else {
+            abc = "Obese";
+        }
+        document.getElementById("interpretation").innerHTML = abc
+    }
+
+
+</script>
+</html>
