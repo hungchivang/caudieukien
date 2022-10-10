@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+  <input id="a" type="number" placeholder="Nhập tháng">
+    <input type="button" onclick="tinhtoan()" value="Tính số ngày">
+  <p id="ketqua"></p>
+</form>
+<script>
+
+    function tinhtoan() {
+        let a= +document.getElementById("a").value;
+        switch (a) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("ketqua").innerHTML="thang " + a + " co 31 ngay";
+        break;
+            case 2 :
+                document.getElementById("ketqua").innerHTML="thang 2 co 28 hoac 29 ngay";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("ketqua").innerHTML="thang " + a + " co 30 ngay";
+                break;
+            default:
+                document.getElementById("ketqua").innerHTML="yeu cau nhap lai thang";
+        }
+
+    }
+</script>
+</body>
+</html>
