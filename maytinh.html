@@ -3,20 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        button {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <form action="">
-  <table>
-    <tr>
-      <input id="a" type="text">
-    </tr>
-    <tr>
-      <td><button value="1"></button></bu></td>
-      <td><button value="1"></button></bu></td>
-      <td><button value="1"></button></bu></td>
-      <td><button value="1"></button></bu></td>
-    </tr>
-  </table>
+    <table>
+        <tr>
+            <td colspan="4"><input id="a" type="text"></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="1" onclick="nhapgiatri(this.value)">1</button></td>
+            <td><button type="button" value="2" onclick="nhapgiatri(this.value)">2</button></td>
+            <td><button type="button" value="3" onclick="nhapgiatri(this.value)">3</button></td>
+            <td><button type="button" value="+" onclick="nhapgiatri(this.value)">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="4" onclick="nhapgiatri(this.value)">4</button></td>
+            <td><button type="button" value="5" onclick="nhapgiatri(this.value)">5</button></td>
+            <td><button type="button" value="6" onclick="nhapgiatri(this.value)">6</button></td>
+            <td><button type="button" value="-" onclick="nhapgiatri(this.value)">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="7" onclick="nhapgiatri(this.value)">7</button></td>
+            <td><button type="button" value="8" onclick="nhapgiatri(this.value)">8</button></td>
+            <td><button type="button" value="9" onclick="nhapgiatri(this.value)">9</button></td>
+            <td><button type="button" value="*" onclick="nhapgiatri(this.value)">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="xoa()">AC</button></td>
+            <td><button type="button" value="0" onclick="nhapgiatri(this.value)">0</button></td>
+            <td><button type="button" onclick="result()">=</button></td>
+            <td><button type="button" value="/" onclick="nhapgiatri(this.value)">/</button></td>
+        </tr>
+    </table>
 </form>
 </body>
+<script>
+    function nhapgiatri(value) {
+        document.getElementById("a").value += value;  //cong chuoi
+    }
+    function result() {
+        let result = eval(document.getElementById("a").value);  //eval: la bieu thuc tinh gia tri tai chuoi
+        document.getElementById("a").value = result;
+    }
+    function xoa() {
+        document.getElementById("a").value ="";
+    }
+</script>
 </html>
